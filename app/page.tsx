@@ -1,12 +1,7 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { ArrowRight, Plus, Eye, Bookmark } from "lucide-react";
 
@@ -79,33 +74,6 @@ export default function HomePage() {
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* Add Idea Form */}
-          <Card className="border-primary/20">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Plus className="h-5 w-5" />
-                Add New Idea
-              </CardTitle>
-              <CardDescription>Submit a new SaaS idea to the collection</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="ideaTitle">Idea Title</Label>
-                  <Input id="ideaTitle" placeholder="Enter your SaaS idea title..." required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="ideaDescription">Description</Label>
-                  <Textarea id="ideaDescription" placeholder="Describe your SaaS idea..." className="min-h-[100px]" required />
-                </div>
-                <Button type="submit" className="w-full sm:w-auto">
-                  <Plus className="mr-2 h-4 w-4" />
-                  Add Idea
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
           {/* Ideas Grid */}
           <div>
             <div className="flex items-center justify-between mb-6">
