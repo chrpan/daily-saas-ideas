@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>chrpan - Daily SaaS Ideas</title>
+    <title>daily-saas-ideas - Daily SaaS Ideas Collection</title>
     <style>
         * {
             margin: 0;
@@ -72,11 +72,40 @@
             line-height: 1.5;
         }
         
+        .idea-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-tag {
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+        
         .idea-date {
             font-size: 0.9em;
             color: #999;
             border-top: 1px solid #eee;
             padding-top: 10px;
+        }
+        
+        .idea-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+        
+        .idea-link:hover {
+            text-decoration: underline;
         }
         
         .add-idea-form {
@@ -133,12 +162,23 @@
             font-size: 0.9em;
             color: #777;
         }
+        
+        .featured-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>chrpan</h1>
-        <div class="subtitle">Daily SaaS Ideas Collection</div>
+        <h1>daily-saas-ideas</h1>
+        <div class="subtitle">Daily SaaS Ideas Collection - Validated Micro-SaaS Concepts for Solo Founders</div>
     </header>
     
     <div class="add-idea-form">
@@ -161,27 +201,39 @@
     </div>
     
     <script>
-        // Sample ideas
+        // Sample ideas with detailed pages
         const sampleIdeas = [
+            {
+                title: "Testimonial Widget for EU Freelancers",
+                description: "A GDPR-compliant, no-code testimonial collection and display tool tailored for freelancers and agencies in Italy, Germany, and Austria. Features EU-hosted data, localized collection flows (Italian/German), compliance linking to FatturaPA/E-Rechnung, and VAT-compliant billing.",
+                date: "2025-08-21",
+                tags: ["Social Proof", "EU Compliance", "GDPR", "Freelancers"],
+                detailUrl: "idea-1-testimonial-widget-eu-freelancers.html",
+                featured: true
+            },
             {
                 title: "AI-Powered Resume Builder",
                 description: "An AI tool that automatically creates professional resumes based on user input and job descriptions. Features include ATS optimization, customizable templates, and instant feedback on content quality.",
-                date: "2025-08-21"
+                date: "2025-08-21",
+                tags: ["AI", "Career", "ATS"],
+                detailUrl: null,
+                featured: false
             },
             {
                 title: "Remote Team Knowledge Base",
                 description: "A decentralized knowledge base specifically designed for remote teams. Features include structured documentation, searchable content, and integration with popular development tools.",
-                date: "2025-08-21"
+                date: "2025-08-21",
+                tags: ["Remote Work", "Documentation", "Team Tools"],
+                detailUrl: null,
+                featured: false
             },
             {
                 title: "Cryptocurrency Portfolio Tracker",
                 description: "Real-time tracking of crypto assets with portfolio optimization recommendations. Includes price alerts, tax reporting, and diversification suggestions.",
-                date: "2025-08-21"
-            },
-            {
-                title: "The First Daily SaaS Idea",
-                description: "This is the first daily SaaS idea added to the collection. This repository allows users to collect and showcase daily SaaS ideas with a web interface for easy viewing and adding new ideas.",
-                date: "2025-08-21"
+                date: "2025-08-21",
+                tags: ["Crypto", "Finance", "Portfolio"],
+                detailUrl: null,
+                featured: false
             }
         ];
         
@@ -195,10 +247,29 @@
             ideas.forEach((idea, index) => {
                 const ideaCard = document.createElement('div');
                 ideaCard.className = 'idea-card';
+                
+                let badgeHtml = '';
+                if (idea.featured) {
+                    badgeHtml = '<span class="featured-badge">✨ Featured</span>';
+                }
+                
+                let tagsHtml = '';
+                if (idea.tags && idea.tags.length > 0) {
+                    tagsHtml = '<div class="idea-meta">' + idea.tags.map(tag => `<span class="meta-tag">${tag}</span>`).join('') + '</div>';
+                }
+                
+                let linkHtml = '';
+                if (idea.detailUrl) {
+                    linkHtml = `<a href="${idea.detailUrl}" class="idea-link">View Detailed Analysis →</a>`;
+                }
+                
                 ideaCard.innerHTML = `
+                    ${badgeHtml}
                     <div class="idea-title">${idea.title}</div>
                     <div class="idea-description">${idea.description}</div>
+                    ${tagsHtml}
                     <div class="idea-date">Added: ${idea.date}</div>
+                    ${linkHtml}
                     <div class="idea-stats">
                         <span>👁 Views: ${Math.floor(Math.random() * 100)}</span>
                         <span>💾 Saves: ${Math.floor(Math.random() * 50)}</span>
@@ -218,7 +289,10 @@
             const newIdea = {
                 title: titleInput.value,
                 description: descriptionInput.value,
-                date: new Date().toISOString().split('T')[0]
+                date: new Date().toISOString().split('T')[0],
+                tags: [],
+                detailUrl: null,
+                featured: false
             };
             
             ideas.unshift(newIdea);
