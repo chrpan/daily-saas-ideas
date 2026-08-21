@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chrpan - Daily SaaS Ideas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .idea-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .idea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .idea-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .idea-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .idea-date {
+            font-size: 0.9em;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        
+        .add-idea-form {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #5a67d8;
+        }
+        
+        .idea-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>chrpan</h1>
+        <div class="subtitle">Daily SaaS Ideas Collection</div>
+    </header>
+    
+    <div class="add-idea-form">
+        <h2>Add New Idea</h2>
+        <form id="ideaForm">
+            <div class="form-group">
+                <label for="ideaTitle">Idea Title</label>
+                <input type="text" id="ideaTitle" name="ideaTitle" placeholder="Enter your SaaS idea title..." required>
+            </div>
+            <div class="form-group">
+                <label for="ideaDescription">Description</label>
+                <textarea id="ideaDescription" name="ideaDescription" placeholder="Describe your SaaS idea..." required></textarea>
+            </div>
+            <button type="submit">Add Idea</button>
+        </form>
+    </div>
+    
+    <div class="ideas-grid" id="ideasGrid">
+        <!-- Ideas will be loaded here -->
+    </div>
+    
+    <script>
+        // Sample ideas
+        const sampleIdeas = [
+            {
+                title: "AI-Powered Resume Builder",
+                description: "An AI tool that automatically creates professional resumes based on user input and job descriptions. Features include ATS optimization, customizable templates, and instant feedback on content quality.",
+                date: "2025-08-21"
+            },
+            {
+                title: "Remote Team Knowledge Base",
+                description: "A decentralized knowledge base specifically designed for remote teams. Features include structured documentation, searchable content, and integration with popular development tools.",
+                date: "2025-08-21"
+            },
+            {
+                title: "Cryptocurrency Portfolio Tracker",
+                description: "Real-time tracking of crypto assets with portfolio optimization recommendations. Includes price alerts, tax reporting, and diversification suggestions.",
+                date: "2025-08-21"
+            }
+        ];
+        
+        // Load ideas from localStorage or use sample ideas
+        let ideas = JSON.parse(localStorage.getItem('saasIdeas')) || sampleIdeas;
+        
+        function renderIdeas() {
+            const grid = document.getElementById('ideasGrid');
+            grid.innerHTML = '';
+            
+            ideas.forEach((idea, index) => {
+                const ideaCard = document.createElement('div');
+                ideaCard.className = 'idea-card';
+                ideaCard.innerHTML = `
+                    <div class="idea-title">${idea.title}</div>
+                    <div class="idea-description">${idea.description}</div>
+                    <div class="idea-date">Added: ${idea.date}</div>
+                    <div class="idea-stats">
+                        <span>👁 Views: ${Math.floor(Math.random() * 100)}</span>
+                        <span>💾 Saves: ${Math.floor(Math.random() * 50)}</span>
+                    </div>
+                `;
+                grid.appendChild(ideaCard);
+            });
+        }
+        
+        // Handle form submission
+        document.getElementById('ideaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const titleInput = document.getElementById('ideaTitle');
+            const descriptionInput = document.getElementById('ideaDescription');
+            
+            const newIdea = {
+                title: titleInput.value,
+                description: descriptionInput.value,
+                date: new Date().toISOString().split('T')[0]
+            };
+            
+            ideas.unshift(newIdea);
+            localStorage.setItem('saasIdeas', JSON.stringify(ideas));
+            
+            // Clear form
+            titleInput.value = '';
+            descriptionInput.value = '';
+            
+            // Re-render ideas
+            renderIdeas();
+            
+            // Show success message (simple alert)
+            alert('Idea added successfully!');
+        });
+        
+        // Initialize
+        renderIdeas();
+    </script>
+</body>
+</html>
