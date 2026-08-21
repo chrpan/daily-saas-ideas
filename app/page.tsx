@@ -179,16 +179,15 @@ export default function HomePage() {
           {viewMode === "table" && (
             <Card>
               <CardContent className="p-0">
-                <div className="overflow-x-auto">
-                  <Table>
+                <Table>
                     <TableHeader>
                       <TableRow className="border-b">
-                        <TableHead className="w-[35%]">Idea</TableHead>
-                        <TableHead className="w-[15%]">Category</TableHead>
-                        <TableHead className="w-[15%]">Est. MRR</TableHead>
-                        <TableHead className="w-[10%]">Build Time</TableHead>
-                        <TableHead className="w-[10%]">Pricing</TableHead>
-                        <TableHead className="w-[15%]">Target Market</TableHead>
+                        <TableHead className="w-[30%]">Idea</TableHead>
+                        <TableHead className="w-[14%]">Category</TableHead>
+                        <TableHead className="w-[14%]">Est. MRR</TableHead>
+                        <TableHead className="w-[12%]">Build Time</TableHead>
+                        <TableHead className="w-[14%]">Pricing</TableHead>
+                        <TableHead className="w-[16%]">Target Market</TableHead>
                       </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -199,7 +198,7 @@ export default function HomePage() {
                               {idea.featured && <span className="inline-flex items-center gap-1 mr-2 text-xs"><span className="text-yellow-500">✨</span>Featured</span>}
                               {idea.title}
                             </Link>
-                            <div className="text-sm text-muted-foreground mt-1 line-clamp-1">{idea.description}</div>
+                            <div className="text-sm text-muted-foreground mt-1 line-clamp-2 max-w-[320px]">{idea.description}</div>
                           </TableCell>
                           <TableCell>
                             <Badge variant="outline" className="text-xs">{idea.category}</Badge>
@@ -221,7 +220,6 @@ export default function HomePage() {
                       ))}
                     </TableBody>
                   </Table>
-                </div>
               </CardContent>
             </Card>
           )}
