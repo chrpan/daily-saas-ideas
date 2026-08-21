@@ -198,24 +198,24 @@ export default function HomePage() {
                               {idea.featured && <span className="inline-flex items-center gap-1 mr-2 text-xs"><span className="text-yellow-500">✨</span>Featured</span>}
                               {idea.title}
                             </Link>
-                            <div className="text-sm text-muted-foreground mt-1 line-clamp-3">{idea.description}</div>
+                            <div className="text-sm text-muted-foreground mt-1 line-clamp-3 whitespace-normal">{idea.description}</div>
                           </TableCell>
-                          <TableCell>
+                          <TableCell className="whitespace-nowrap">
                             <Badge variant="outline" className="text-xs">{idea.category}</Badge>
                           </TableCell>
-                          <TableCell>
+                          <TableCell className="whitespace-nowrap">
                             <span className="font-mono text-primary">{idea.estimatedMRR}</span>
                           </TableCell>
-                          <TableCell>
+                          <TableCell className="whitespace-nowrap">
                             <span className="flex items-center gap-1 text-sm">
                               <Clock className="h-3.5 w-3.5 text-muted-foreground" />
                               {idea.buildTime}
                             </span>
                           </TableCell>
-                          <TableCell>
+                          <TableCell className="whitespace-nowrap">
                             <span className="font-mono text-green-600 dark:text-green-400">{idea.pricing}</span>
                           </TableCell>
-                          <TableCell className="text-sm text-muted-foreground">{idea.targetMarket}</TableCell>
+                          <TableCell className="whitespace-nowrap text-sm text-muted-foreground">{idea.targetMarket}</TableCell>
                         </TableRow>
                       ))}
                     </TableBody>
