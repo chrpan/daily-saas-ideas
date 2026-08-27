@@ -295,7 +295,6 @@ export default function HomePage() {
                         <TableRow key={idea.id} className="hover:bg-muted/50 transition-colors">
                           <TableCell className="font-medium">
                             <Link href={idea.detailUrl || "#"} className="hover:text-primary transition-colors">
-                              {idea.featured && <span className="inline-flex items-center gap-1 mr-2 text-xs"><span className="text-yellow-500">✨</span>Featured</span>}
                               {idea.title}
                             </Link>
                             <div className="text-sm text-muted-foreground mt-1 line-clamp-3 whitespace-normal">{idea.description}</div>
@@ -339,11 +338,6 @@ export default function HomePage() {
                     <CardHeader>
                       <div className="flex items-start justify-between gap-2">
                         <div className="flex-1">
-                          {idea.featured && (
-                            <Badge variant="default" className="mb-2 text-xs">
-                              <span className="mr-1">✨</span> Featured
-                            </Badge>
-                          )}
                           <CardTitle className="text-lg">{idea.title}</CardTitle>
                         </div>
                       </div>
