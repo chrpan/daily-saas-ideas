@@ -82,10 +82,24 @@ const sampleIdeas: Idea[] = [
     pricing: "$19-99/mo",
     targetMarket: "Crypto Investors, Traders",
     category: "FinTech / Crypto"
+  },
+  {
+    id: "5",
+    title: "SMB Document-Digestion Agent",
+    description: "An AI agent that ingests messy inbound business documents (invoices, supplier price-lists, datasheets, spec sheets, quotes, datasets, EDI) and structures them into the customer's own ERP / proprietary schema. Self-hostable, EU-sovereign, delivered as a service via Steuerberater partners.",
+    date: "2026-08-26",
+    tags: ["Doc-AI", "Data Ingestion", "EU Sovereign", "Self-Host"],
+    detailUrl: "/ideas/5",
+    featured: false,
+    estimatedMRR: "€5-10K",
+    buildTime: "6-8 weeks",
+    pricing: "€399-1.2K setup + €19/mo/mapping",
+    targetMarket: "EU SMBs, Steuerberater",
+    category: "AI / Data Ingestion"
   }
 ];
 
-const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto"];
+const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion"];
 const sortOptions = [
   { value: "featured", label: "Featured First" },
   { value: "mrr-desc", label: "Est. MRR (High → Low)" },
