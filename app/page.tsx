@@ -96,10 +96,24 @@ const sampleIdeas: Idea[] = [
     pricing: "€399-1.2K setup + €19/mo/mapping",
     targetMarket: "EU SMBs, Steuerberater",
     category: "AI / Data Ingestion"
+  },
+  {
+    id: "6",
+    title: "Failed-Payment Dunning & Recovery Agent",
+    description: "An autonomous agent that detects failed subscription payments, classifies the decline reason (insufficient funds, expired card, hard decline), and runs a localized EU dunning + recovery sequence — retry timing, DE/IT/AT email + WhatsApp nudges, one-click Stripe update link — recovering churned MRR without a human in the loop. Self-serve, EU-hosted, dogfooded on Limeon srl first.",
+    date: "2026-08-28",
+    tags: ["Dunning", "Payments", "Churn Recovery", "EU SMB", "Self-Serve"],
+    detailUrl: "/ideas/6",
+    featured: false,
+    estimatedMRR: "€3-8K",
+    buildTime: "3-4 weeks",
+    pricing: "€29-99/mo + 5% recovered",
+    targetMarket: "EU subscription SMBs, freelancers",
+    category: "AI / Revenue Ops"
   }
 ];
 
-const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion"];
+const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops"];
 const sortOptions = [
   { value: "featured", label: "Featured First" },
   { value: "mrr-desc", label: "Est. MRR (High → Low)" },
