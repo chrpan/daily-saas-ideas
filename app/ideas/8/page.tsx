@@ -295,8 +295,8 @@ export default function IdeaDetailPage() {
                       </Button>
                     </CardFooter>
                   </Card>
-                ))
-              }
+                ))}
+              </div>
               <p className="text-sm text-muted-foreground text-center mt-4">
                 M12 conservative estimate: €5K MRR (~€60K ARR) at 40 self-serve seats + 6 MSP (avg 12 client teams). Layered path (association channel → Resolution KB retention) projects €7K MRR.
               </p>
