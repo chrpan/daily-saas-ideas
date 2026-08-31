@@ -110,10 +110,52 @@ const sampleIdeas: Idea[] = [
     pricing: "€29-99/mo + 5% recovered",
     targetMarket: "EU subscription SMBs, freelancers",
     category: "AI / Revenue Ops"
+  },
+  {
+    id: "7",
+    title: "Plain-English Infra-Compliance Checker for Small IT Operators",
+    description: "A self-serve checker that reads a domain's DMARC/SPF/DKIM and core infra-posture records, translates each into plain business language, flags misconfigurations, and hands the operator a one-click fix guide. EU-hosted, sold as an MSP/IT-operator upsell wedge via EU MSP and trade-association channels, dogfooded on Limeon srl first.",
+    date: "2026-08-29",
+    tags: ["Infra Compliance", "DNS", "Email Security", "EU IT", "Self-Serve"],
+    detailUrl: "/ideas/7",
+    featured: false,
+    estimatedMRR: "€2-6K",
+    buildTime: "2-3 weeks",
+    pricing: "€19-79/mo + €9/domain scan",
+    targetMarket: "EU small IT operators, MSPs",
+    category: "IT Compliance / DNS"
+  },
+  {
+    id: "8",
+    title: "Context-Aware Helpdesk for EU Small Teams (MSP White-Label)",
+    description: "A helpdesk that auto-triages internal support tickets, pulls context from the team's own tools, drafts a plain-language reply in DE/IT/EN, and routes to the right person — white-labeled and resold by MSPs. EU-hosted, self-serve, dogfooded on Limeon srl first.",
+    date: "2026-08-30",
+    tags: ["Helpdesk", "MSP White-Label", "EU SMB", "Context-Aware", "Self-Serve"],
+    detailUrl: "/ideas/8",
+    featured: false,
+    estimatedMRR: "€3-7K",
+    buildTime: "3-4 weeks",
+    pricing: "€29-99/mo",
+    targetMarket: "EU small teams, MSPs",
+    category: "IT Support / Helpdesk"
+  },
+  {
+    id: "9",
+    title: "Code Audit for AI-Built Apps (Secondread Model)",
+    description: "A self-serve audit that connects to a GitHub repo built by Bolt / Lovable / Replit / Cursor and returns a plain-language briefing: redundant services, scaling ceilings, fragile auth layers, hidden infra bills. Non-technical founders who shipped fast with AI can't read their own codebase when costs spike — this closes the gap. Growth via Indie Hackers, founder Slack groups, curation partnerships with Bolt / Replit / Lovable.",
+    date: "2026-08-31",
+    tags: ["Code Audit", "AI-Built Apps", "SaaS Audit", "Infra Cost", "Self-Serve"],
+    detailUrl: "/ideas/9",
+    featured: false,
+    estimatedMRR: "€5-10K",
+    buildTime: "4-6 weeks",
+    pricing: "€49 snapshot + €199/mo monitoring",
+    targetMarket: "Non-technical founders, AI coders",
+    category: "AI / SaaS Audit"
   }
 ];
 
-const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops"];
+const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit"];
 const sortOptions = [
   { value: "featured", label: "Featured First" },
   { value: "mrr-desc", label: "Est. MRR (High → Low)" },
