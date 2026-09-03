@@ -1,6 +1,6 @@
 const sampleIdeas = [
     {
-        id: 5,
+        id: 6,
         title: "AI note-taker as a sellable B2B productivity wedge (Fireflies.ai model).",
         description: "An AI note-taker that auto-joins meetings, transcribes, and delivers structured notes. Useful for clients seeking productivity improvements.",
         date: "2026-08-26",
