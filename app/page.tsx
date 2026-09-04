@@ -1,20 +1,16 @@
-const sampleIdeas = [
-    {
-        id: 6,
-        title: "AI note-taker as a sellable B2B productivity wedge (Fireflies.ai model).",
-        description: "An AI note-taker that auto-joins meetings, transcribes, and delivers structured notes. Useful for clients seeking productivity improvements.",
-        date: "2026-08-26",
-        tags: ["AI", "Productivity", "B2B"],
-        detailUrl: "/ideas/5",
-        featured: false,
-        estimatedMRR: 5000,
-        buildTime: "2 weeks",
-        pricing: "€49/month",
-        targetMarket: "Small-to-medium B2B enterprises",
-        category: "Productivity Tools"
-    }
+export const sampleIdeas = [
+  {
+    id: 6,
+    title: 'Regulatory-change monitoring agent for EU professional-services firms',
+    description: 'An AI agent monitors EU regulations for professional services, providing summaries and action items for compliance.',
+    date: '2026-09-04',
+    tags: ['AI', 'Regulatory', 'B2B'],
+    detailUrl: '/ideas/6',
+    featured: false,
+    estimatedMRR: 500,
+    buildTime: '2 months',
+    pricing: 'Subscription',
+    targetMarket: 'Professional Services EU',
+    category: 'Compliance'
+  }
 ];
-
-export default function IdeasPage() {
-    // Render the ideas on the page
-}
