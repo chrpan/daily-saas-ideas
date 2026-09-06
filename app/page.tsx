@@ -28,6 +28,20 @@ interface Idea {
 
 const sampleIdeas: Idea[] = [
   {
+    id: "10",
+    title: "Automated Peppol e-invoicing compliance agent for EU cross-border freelancers",
+    description: "An AI agent that validates and generates outgoing invoices according to the recipient country's Peppol requirements, reducing payment delays and offering integration with existing invoicing tools. Designed specifically for EU freelancers and SMBs, ensuring compliance and efficiency.",
+    date: "2026-09-05",
+    tags: ["Compliance", "Finance", "AI", "SMB"],
+    detailUrl: "/ideas/10",
+    featured: false,
+    estimatedMRR: "€10-20K",
+    buildTime: "6-8 weeks",
+    pricing: "€49-199/mo",
+    targetMarket: "Freelancers, Tax Advisors",
+    category: "Finance / Compliance"
+  },
+  {
     id: "1",
     title: "Testimonial Widget for EU Freelancers",
     description: "A GDPR-compliant, no-code testimonial collection and display tool tailored for freelancers and agencies in Italy, Germany, and Austria. Features EU-hosted data, localized collection flows (Italian/German), compliance linking to FatturaPA/E-Rechnung, and VAT-compliant billing.",
