@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, XCircle, Globe } from "lucide-react";
+import { ArrowLeft, CheckCircle, XCircle, Globe } from "lucide-react";
 import Link from "next/link";
 
 export default function IdeaDetailPage() {
