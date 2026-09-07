@@ -166,10 +166,24 @@ const sampleIdeas: Idea[] = [
     pricing: "€49 snapshot + €199/mo monitoring",
     targetMarket: "Non-technical founders, AI coders",
     category: "AI / SaaS Audit"
+  },
+  {
+    id: "11",
+    title: "EU Receipt Intake & Reimbursement Agent for Small Teams",
+    description: "An agent that sits between employees submitting receipts and the accounting firm: captures mobile receipt photos/invoices, validates them against a per-company policy (category rules, approval thresholds, missing-field checks), enforces EU VAT-receipt completeness rules (DE/IT/AT mandatory fields), and produces a clean reimbursement batch plus a tidy export that drops straight into the bookkeeper's workflow. Sold via Steuerberater/commercialista/accountant referral network rather than direct outreach.",
+    date: "2026-09-07",
+    tags: ["Expense Management", "EU Compliance", "Accounting", "SMB", "Self-Serve"],
+    detailUrl: "/ideas/11",
+    featured: false,
+    estimatedMRR: "EUR3-8K",
+    buildTime: "4-6 weeks",
+    pricing: "EUR29-79/mo + EUR5/employee",
+    targetMarket: "EU small/mid teams, accountants",
+    category: "AI / Finance Ops"
   }
 ];
 
-const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit"];
+const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit", "AI / Finance Ops"];
 const sortOptions = [
   { value: "featured", label: "Featured First" },
   { value: "mrr-desc", label: "Est. MRR (High → Low)" },
