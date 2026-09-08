@@ -180,10 +180,24 @@ const sampleIdeas: Idea[] = [
     pricing: "EUR29-79/mo + EUR5/employee",
     targetMarket: "EU small/mid teams, accountants",
     category: "AI / Finance Ops"
+  },
+  {
+    id: "12",
+    title: "Compliance Evidence Collector for Small Regulated Firms",
+    description: "An autonomous agent that continuously collects, organizes, and refreshes compliance evidence (policies, access logs, training records, audit trails, vendor certificates) for small regulated firms — healthcare clinics, law offices, financial advisors, energy consultants — replacing the manual scramble before audits. Self-serve, EU-hosted, GDPR-ready, sold via trade-association and compliance-consultant channels. Dogfooded on Limeon srl first.",
+    date: "2026-09-08",
+    tags: ["Compliance", "Audit", "AI", "Regulated Firms", "Self-Serve"],
+    detailUrl: "/ideas/12",
+    featured: false,
+    estimatedMRR: "EUR3-8K",
+    buildTime: "4-6 weeks",
+    pricing: "EUR49-149/mo",
+    targetMarket: "EU small regulated firms, compliance consultants",
+    category: "Compliance / Audit"
   }
 ];
 
-const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit", "AI / Finance Ops"];
+const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit", "AI / Finance Ops", "Compliance / Audit"];
 const sortOptions = [
   { value: "featured", label: "Featured First" },
   { value: "mrr-desc", label: "Est. MRR (High → Low)" },
