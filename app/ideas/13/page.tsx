@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, XCircle, Tag, Zap, Users, DollarSign, Globe, Shield, ArrowRight, Clock, FileText, Building2, PenTool } from "lucide-react";
+import { CheckCircle, XCircle, Tag, Zap, Users, DollarSign, Globe, Shield, ArrowRight, Clock, Receipt, FileCheck, Truck } from "lucide-react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -31,30 +31,30 @@ export default function IdeaDetailPage() {
         <div className="flex items-center gap-2 mb-4 text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground transition-colors">Ideas</Link>
           <ArrowRight className="h-3 w-3" />
-          <span className="font-medium">Idea #12</span>
+          <span className="font-medium">Idea #13</span>
         </div>
 
         {/* Idea Badge and Title */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <Badge className="text-base px-4 py-1">Idea #12</Badge>
-            <Badge variant="outline" className="text-sm">Compliance / Audit</Badge>
+            <Badge className="text-base px-4 py-1">Idea #13</Badge>
+            <Badge variant="outline" className="text-sm">AI / Finance Ops</Badge>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight mb-2">Compliance Evidence Collector for Small Regulated Firms</h1>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">Expense Intake & Clean-Reimbursement Agent for EU Small Teams</h1>
           <p className="text-lg text-muted-foreground">
-            An autonomous agent that continuously collects, organizes, and refreshes compliance evidence (policies, access logs, training records, audit trails, vendor certificates) for small regulated firms — healthcare clinics, law offices, financial advisors, energy consultants — replacing the manual scramble before audits.
+            An agent that sits between employees submitting expenses and the accounting firm: captures mobile receipt photos and PDF invoices, validates them against a per-company policy, enforces EU VAT-receipt completeness rules (DE/IT/AT mandatory fields), and produces a clean reimbursement batch plus a tidy export that drops straight into the bookkeeper's workflow.
           </p>
         </div>
 
         {/* Meta Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
           {[
-            { label: "Category", value: "Compliance / Audit" },
-            { label: "Target Market", value: "EU small regulated firms, compliance consultants" },
-            { label: "Pricing Model", value: "EUR49-149/mo" },
+            { label: "Category", value: "AI / Finance Ops" },
+            { label: "Target Market", value: "EU small/mid teams, accountants" },
+            { label: "Pricing Model", value: "EUR29-79/mo + EUR5/employee" },
             { label: "Build Time", value: "4-6 weeks" },
-            { label: "Reference", value: "Vanta ($45M ARR) / Drata ($30M ARR)" },
-            { label: "Compliance", value: "GDPR, ISO 27001 readiness, industry-specific" }
+            { label: "Reference", value: "Dext + Expensify (US-first)" },
+            { label: "Compliance", value: "GDPR, DE/IT/AT VAT receipt rules" }
           ].map((meta, i) => (
             <Card key={i} className="bg-muted/50">
               <CardContent className="p-4">
@@ -72,18 +72,18 @@ export default function IdeaDetailPage() {
           </h2>
           <Card>
             <CardHeader>
-              <CardTitle className="text-xl">Small Regulated Firms Scramble Before Audits</CardTitle>
+              <CardTitle className="text-xl">EU Small Teams Drown in Receipt Chaos</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground">
-                Small regulated firms (healthcare clinics, law offices, financial advisors, energy consultants) face audits that require organized evidence — policies, access logs, training records, audit trails, vendor certificates. Existing compliance automation (Vanta $45M ARR, Drata $30M ARR) targets mid-market and enterprise, leaving small firms with:
+                Small EU teams (10-50 people) lose hours every month to expense chaos. Existing tools like Dext ($50M+ ARR) and Expensify ($200M+ ARR) are US-first and don't handle the messy reality of EU SME finance:
               </p>
               <div className="space-y-3">
                 {[
-                  { title: "Manual evidence collection", desc: "The compliance lead or office manager hunts down policy documents, screenshots access logs, digs up training attendance records, and assembles a physical or digital folder — usually in the 2 weeks before an audit" },
-                  { title: "Evidence goes stale between audits", desc: "Training records aren't refreshed when new staff join. Access logs aren't reviewed. Policy updates (GDPR, data retention, occupational safety) are approved in a meeting but never uploaded to the evidence folder" },
-                  { title: "Vendor certificates expire silently", desc: "A cloud provider, payroll processor, or insurance carrier updates their SOC 2 or ISO certificate and the new version never reaches the evidence folder — until the auditor asks for it and the firm realizes it's 11 months out of date" },
-                  { title: "No continuous compliance posture", desc: "Between audits, there's no systematic check that evidence is current, complete, and accessible. The firm assumes everything is fine until an auditor flags a gap" }
+                  { title: "Receipts arrive in every form factor", desc: "Crumpled gas-station receipts, PDF invoices from German suppliers, photos from Italian business dinners, email attachments from Austrian vendors — all land in Slack, email, WhatsApp, or a shoebox" },
+                  { title: "Per-company policy is enforced manually", desc: "The office manager or junior accountant eyeballs each submission against an informal rule sheet — 'is this dinner client-facing or team lunch?', 'does this taxi receipt have the meter number?' — and rejects the messy ones with a WhatsApp message" },
+                  { title: "EU VAT-receipt completeness rules differ by country", desc: "Germany requires Rechnungsnummer, Steuernummer, net/Gross breakdown; Italy requires Partita IVA, data emissione, operazione di acquisto; Austria requires UID-Nr., Glättungsbetrag handling — missing one field means the bookkeeper has to chase it" },
+                  { title: "Clean export for the accountant is a manual task", desc: "By the time the monthly bookkeeping batch reaches the Steuerberater/commercialista, someone has spent 3-5 hours reformatting, categorizing, and flagging receipts that don't match policy" }
                 ].map((item) => (
                   <div key={item.title} className="flex gap-3">
                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center text-destructive">
@@ -109,7 +109,7 @@ export default function IdeaDetailPage() {
                 <div>
                   <h3 className="font-semibold mb-2 text-primary-foreground">💡 The Insight</h3>
                   <p className="text-sm text-primary-foreground/80">
-                    The audit is not the problem — the <em>continuous evidence gap between audits</em> is. If an agent continuously collects, validates, and refreshes evidence, the audit becomes a formality instead of a scramble. The winner serves the small firm's compliance lead, not the enterprise CISO.
+                    The bottleneck isn't capturing receipts — it's <em>policy enforcement at intake time</em>. If the agent rejects a non-compliant receipt the moment it arrives (with a plain-language reason in DE/IT/EN), the bookkeeper never sees it. The winner here isn't a better receipt scanner — it's a policy gate that produces accountant-ready batches by default.
                   </p>
                 </div>
               </div>
@@ -124,41 +124,41 @@ export default function IdeaDetailPage() {
           </h2>
           <Card>
             <CardHeader>
-              <CardTitle className="text-xl">A Compliance Evidence Agent for Small Regulated Firms</CardTitle>
-              <CardDescription>An autonomous agent that continuously collects, organizes, and refreshes compliance evidence — replacing the manual pre-audit scramble with a monitored, always-audit-ready evidence base</CardDescription>
+              <CardTitle className="text-xl">A Policy-Enforcing Expense Agent for EU Teams</CardTitle>
+              <CardDescription>An agent that captures receipts in any form factor, validates them against a per-company policy at intake, enforces EU VAT completeness rules, and produces a clean reimbursement batch + tidy export for the bookkeeper</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   {
-                    icon: <FileText className="h-5 w-5" />,
-                    title: "Evidence Discovery",
-                    desc: "Connects to the firm's tools (cloud storage, HR system, email, calendar, vendor portals) and discovers evidence automatically: policies in shared drives, training records in HR software, access logs in cloud consoles, vendor certificates in email inboxes"
+                    icon: <Receipt className="h-5 w-5" />,
+                    title: "Multi-Format Intake",
+                    desc: "Mobile photo, PDF upload, email-forward, Slack/WhatsApp attachment — one intake surface. OCR + layout-aware extraction handles crumpled receipts and multi-page invoices"
                   },
                   {
-                    icon: <Building2 className="h-5 w-5" />,
-                    title: "Per-Industry Evidence Taxonomy",
-                    desc: "Pre-built evidence requirements for common regulated profiles: medical practices (patient data handling, staff qualifications), law offices (client confidentiality, conflict-of-interest checks), financial advisors (KYC documentation, suitability records), energy consultants (safety certifications, environmental permits)"
+                    icon: <FileCheck className="h-5 w-5" />,
+                    title: "Per-Company Policy Engine",
+                    desc: "Define rules once: category thresholds (client dinner vs team lunch), required fields per expense type, approval chain by amount. Agent flags violations at intake with plain-language reasons"
                   },
                   {
-                    icon: <PenTool className="h-5 w-5" />,
-                    title: "Evidence Validation & Gap Detection",
-                    desc: "Validates each piece of evidence against requirements: is the training record current (within 12 months)? Is the vendor certificate still valid (not expired)? Is the policy signed and dated by the responsible person? Flags gaps with plain-language remediation steps"
-                  },
-                  {
-                    icon: <Clock className="h-5 w-5" />,
-                    title: "Continuous Refresh Cadence",
-                    desc: "Configurable refresh schedule: monthly evidence review, quarterly vendor certificate check, annual policy re-sign. Agent runs on autopilot and alerts the compliance lead only when something needs attention — not a constant stream of notifications"
+                    icon: <Globe className="h-5 w-5" />,
+                    title: "EU VAT Completeness Enforcement",
+                    desc: "Country-specific mandatory-field checks: DE (Rechnungsnummer, Steuernummer, net/Gross), IT (Partita IVA, data emissione, operazione di acquisto), AT (UID-Nr., Glättungsbetrag). Missing field = intake rejection with exact reason"
                   },
                   {
                     icon: <Shield className="h-5 w-5" />,
-                    title: "Audit-Ready One-Click Pack",
-                    desc: "When an audit is announced, generate a complete, organized evidence pack in the format the auditor expects: indexed, timestamped, with a cover sheet listing each evidence item and its status. No last-minute hunting"
+                    title: "Clean Export for the Bookkeeper",
+                    desc: "One-click export: categorized, policy-cleared, VAT-complete batch in the format the Steuerberater/commercialista expects. Drops straight into their workflow — no reformatting"
                   },
                   {
                     icon: <Users className="h-5 w-5" />,
-                    title: "Compliance-Consultant Distribution",
-                    desc: "Sold via compliance consultants and trade associations who advise small regulated firms. The consultant recommends the tool to their clients because it hands them cleaner audit prep and reduces their own advisory overhead"
+                    title: "Employee-Facing Self-Service",
+                    desc: "Employees submit via mobile link, get instant pass/fail with reason, resubmit corrected version. No bookkeeping conversation needed for routine submissions"
+                  },
+                  {
+                    icon: <Truck className="h-5 w-5" />,
+                    title: "Accountant-Referred Distribution",
+                    desc: "Sold via Steuerberater/commercialista/accountant referral: the accountant recommends it to their SME clients because it hands them cleaner batches. B2B2B, no direct outreach"
                   }
                 ].map((feature) => (
                   <Card key={feature.title} className="bg-muted/30 border-dashed">
@@ -190,15 +190,15 @@ export default function IdeaDetailPage() {
                 <div className="text-sm font-medium text-green-800 mb-3">📈 Reference Revenue Data</div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex justify-between">
-                    <span><strong>Vanta</strong> (compliance automation, mid-market/enterprise)</span>
-                    <span className="font-mono">$45M+ ARR</span>
+                    <span><strong>Dext</strong> (receipt/invoice capture, US-first)</span>
+                    <span className="font-mono">$50M+ ARR</span>
                   </li>
                   <li className="flex justify-between">
-                    <span><strong>Drata</strong> (continuous compliance, mid-market)</span>
-                    <span className="font-mono">$30M+ ARR</span>
+                    <span><strong>Expensify</strong> (expense management, US-first)</span>
+                    <span className="font-mono">$200M+ ARR</span>
                   </li>
                   <li className="flex justify-between">
-                    <span><strong>Preventive / local EU compliance tools</strong> (niche)</span>
+                    <span><strong>Skilldoc / local EU players</strong> (niche accountants tools)</span>
                     <span className="font-mono">$1-5M ARR</span>
                   </li>
                   <li className="flex justify-between">
@@ -219,24 +219,24 @@ export default function IdeaDetailPage() {
                 <div className="space-y-3">
                   {[
                     {
-                      title: "Enterprise tools overshoot the small-firm segment",
-                      desc: "Vanta and Drata are built for 50-500 person companies with dedicated compliance staff. A 5-person medical practice or 8-lawyer firm doesn't have that — they need something that runs itself and speaks plain language, not a platform that requires a compliance hire to operate"
+                      title: "EU regulatory tailwind",
+                      desc: "EU VAT invoice requirements are getting stricter, not looser. Digital reporting obligations (DFV in DE, FatturaPA in IT, Kurzmitteilung in AT) are pushing SMEs toward structured receipt handling — the compliance angle is a door opener with accountants"
                     },
                     {
-                      title: "Regulatory pressure is increasing for small firms",
-                      desc: "EU GDPR enforcement, NIS2 directive (cybersecurity for essential service providers — many small firms qualify), and industry-specific regulations (medical device regulation, financial advisory rules) are pushing small firms toward documented compliance that they can't wing anymore"
+                      title: "Underserved distribution channel",
+                      desc: "Steuerberater/commercialista/accountant networks are dense in DE/IT/AT. One referral from a trusted accountant gets you 10-50 SME clients with zero cold outreach. The accountant wants cleaner batches — this is their pain too"
                     },
                     {
-                      title: "Compliance consultants are a built-in distribution channel",
-                      desc: "Small regulated firms already hire compliance consultants for audit prep. That consultant wants their clients to arrive with organized evidence — it makes the consultant look good and reduces their billable prep hours. They'll recommend a tool that delivers that"
+                      title: "High willingness to pay",
+                      desc: "A small team spending 3-5 hours/month on receipt cleanup at €25-40/hour = €900-2400/year in wasted time. EUR29-79/mo is trivial against that. Accountants recommending it to multiple clients amortizes their own onboarding"
                     },
                     {
-                      title: "Evidence moat compounds over time",
-                      desc: "The agent's evidence base grows richer and more current over time. A firm that's been running it for 18 months has a comprehensive, continuously refreshed evidence history — switching means rebuilding that history from scratch. The moat is the historical record, not the software"
+                      title: "Policy moat",
+                      desc: "Once a company's policy rules, approval chains, and export format are configured, switching is painful. The agent learns the company's patterns over time (which vendors are always OK, which receipts always get rejected) — that institutional knowledge is sticky"
                     },
                     {
-                      title: "Low competition for the small-firm segment",
-                      desc: "The compliance automation space is crowded at the enterprise end and empty at the small-firm end. Most small firms still use spreadsheets and shoeboxes. A self-serve, plain-language, EU-hosted tool for regulated small firms is a clear gap"
+                      title: "Low competition in the accountant-referred lane",
+                      desc: "Dext and Expensify sell direct to SMEs. The accountant-referred B2B2B lane is empty for a EU-policy-aware tool — accountants don't recommend US-first tools that don't handle DE/IT/AT VAT rules"
                     }
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
@@ -261,30 +261,30 @@ export default function IdeaDetailPage() {
           <Card>
             <CardHeader>
               <CardTitle className="text-xl">Tiered Pricing</CardTitle>
-              <CardDescription>EUR49-149/mo tiered pricing for small regulated firms, targeting different levels of compliance complexity</CardDescription>
+              <CardDescription>EUR29-79/mo tiered pricing plus per-employee fee, targeting different segments of the EU small-team market via accountant referral</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-3">
                 {[
                   {
-                    name: "Essentials",
-                    price: "EUR49/mo",
-                    desc: "1 regulated profile, up to 10 evidence types, monthly refresh, single-user compliance lead, email export, EU hosting, GDPR DPA",
-                    features: ["1 regulated profile", "10 evidence types", "Monthly refresh", "Single user", "Email export", "EU hosting", "GDPR DPA"],
+                    name: "Starter",
+                    price: "EUR29/mo",
+                    desc: "Up to 10 employees, 50 receipts/mo, basic policy engine (3 rules), country VAT checks (1 country), email export",
+                    features: ["10 employees", "50 receipts/mo", "3 policy rules", "1 country VAT", "Email export", "Email support"],
                     popular: false
                   },
                   {
                     name: "Professional",
-                    price: "EUR99/mo",
-                    desc: "3 regulated profiles, unlimited evidence types, weekly refresh, multi-user (compliance lead + 2 staff), audit-ready pack generator, vendor certificate monitoring, Slack alerts",
-                    features: ["3 regulated profiles", "Unlimited evidence types", "Weekly refresh", "3 users", "Audit pack generator", "Vendor cert monitoring", "Slack alerts", "Priority support"],
+                    price: "EUR49/mo",
+                    desc: "Up to 30 employees, unlimited receipts, full policy engine, multi-country VAT checks (DE/IT/AT), accountant-ready batch export, Slack/WhatsApp intake",
+                    features: ["30 employees", "Unlimited receipts", "Full policy engine", "DE/IT/AT VAT", "Batch export", "Slack + WhatsApp intake", "Priority support"],
                     popular: true
                   },
                   {
-                    name: "Consultant/White-Label",
-                    price: "EUR149/mo",
-                    desc: "Manage up to 10 client firms from one dashboard, per-client branding, consultant reporting dashboard, white-label evidence packs, API access, SLA, remove branding",
-                    features: ["10 client firms", "Per-client branding", "Consultant dashboard", "White-label packs", "API access", "SLA", "Remove branding"],
+                    name: "Agency/Accountant",
+                    price: "EUR79/mo",
+                    desc: "Everything in Pro + manage multiple client companies from one dashboard, per-client branding, white-label export, accountant reporting dashboard",
+                    features: ["Unlimited client companies", "Per-client branding", "White-label export", "Accountant dashboard", "API access", "SLA", "Remove branding"],
                     popular: false
                   }
                 ].map((plan) => (
@@ -309,14 +309,14 @@ export default function IdeaDetailPage() {
                     </CardContent>
                     <CardFooter className="border-t">
                       <Button variant={plan.popular ? "default" : "outline"} className="w-full">
-                        {plan.popular ? "Start Pro Trial" : "Choose Essentials"}
+                        {plan.popular ? "Start Pro Trial" : "Choose Starter"}
                       </Button>
                     </CardFooter>
                   </Card>
                 ))}
               </div>
               <p className="text-sm text-muted-foreground text-center mt-4">
-                14-day free trial, no credit card required. Annual billing saves 20%.
+                14-day free trial, no credit card required. + EUR5/employee on all plans. Annual billing saves 20%.
               </p>
             </CardContent>
           </Card>
@@ -339,12 +339,12 @@ export default function IdeaDetailPage() {
                   "Supabase (PostgreSQL + Auth + Storage)",
                   "Stripe (Billing + VAT)",
                   "Vercel (EU regions: FRA1, MIL1)",
-                  "API connectors (Google Workspace, Microsoft 365, common HR/software APIs)",
+                  "Tesseract / AWS Textract (OCR)",
                   "Tailwind CSS",
                   "TypeScript",
-                  "Zod (evidence validation rules)",
-                  "React Email (alert templates)",
-                  "PDF.js (certificate/policy parsing)"
+                  "Zod (policy validation)",
+                  "React Email (localized nudge templates)",
+                  "PDF.js (invoice parsing)"
                 ].map((tech) => (
                   <Badge key={tech} variant="outline" className="bg-muted/50">
                     {tech}
@@ -369,23 +369,23 @@ export default function IdeaDetailPage() {
               {[
                 {
                   week: "Week 1",
-                  title: "Compliance Consultant Interviews (10 conversations)",
-                  desc: "Reach out to 10 compliance consultants who serve small regulated firms in DE/IT/AT via existing networks, LinkedIn, and trade association events. Ask: 'What's the most painful part of audit prep for your smallest clients? How much time do they waste gathering evidence? What would a tool need to do to be worth recommending?'"
+                  title: "Accountant Interviews (10 conversations)",
+                  desc: "Reach out to 10 Steuerberater/commercialista/accountants in DE/IT/AT via existing networks, LinkedIn, and local chamber events. Ask: 'How much time do your SME clients waste on receipt cleanup before you can do the books? What would a clean-batch tool need to do to be worth recommending to your clients?'"
                 },
                 {
                   week: "Week 2",
-                  title: "Evidence Taxonomy + Landing Page",
-                  desc: "Build a simple landing page showing the evidence taxonomy for one vertical (e.g. medical practices): a visual map of all evidence types, how the agent discovers each, and a sample audit-ready pack. Drive 200 visitors via consultant intros + €100 LinkedIn/Google ads targeting compliance consultants and practice managers in DE/IT/AT. Target: 5-10% signup."
+                  title: "Policy-Engine Mockup + Landing Page",
+                  desc: "Build a simple landing page showing the policy engine in action: a receipt arrives, the agent validates it against a sample company policy, shows pass/fail with reason. Drive 200 visitors via accountant intros + €100 LinkedIn/Google ads targeting SME owners and accountants in DE/IT/AT. Target: 5-10% signup."
                 },
                 {
                   week: "Week 3",
-                  title: "Pre-Sell to Consultants",
-                  desc: "Email signups: offer consultants a lifetime 40% discount for referring 5+ client firms. Offer firms EUR49/mo → EUR29/mo lifetime (first 20). Stripe payment link with real payment. Target: 5-10 paying commitments before building. If <5, pivot or kill."
+                  title: "Pre-Sell to Accountants",
+                  desc: "Email signups: offer accountants a lifetime 40% discount for referring 5+ SME clients. Offer SME owners EUR29/mo → EUR19/mo lifetime (first 20). Stripe payment link with real payment. Target: 5-10 paying commitments before building. If <5, pivot or kill."
                 },
                 {
                   week: "Week 4",
                   title: "Scope MVP",
-                  desc: "Interview pre-payers. Find the ONE regulated profile and ONE evidence type they need first. Scope a 4-6 week build: evidence discovery (Google Drive + email connector) → evidence validation (Zod rules for currency/signature/expiry) → gap dashboard → one-click audit pack export. Nothing more."
+                  desc: "Interview pre-payers. Find the ONE policy rule and ONE VAT country they need first. Scope a 4-6 week build: intake (mobile + email forward) → OCR + extraction → Zod policy validation → country VAT completeness check → clean export CSV. Nothing more."
                 }
               ].map((step) => (
                 <div key={step.week} className="flex gap-4">
@@ -414,12 +414,12 @@ export default function IdeaDetailPage() {
             </CardHeader>
             <CardContent className="space-y-3">
               {[
-                "Deploy MVP on compliance.limeon.eu (EU-hosted)",
-                "Configure Limeon's regulated profile: energy consulting firm with data-handling, staff-qualification, and vendor-certification evidence requirements",
-                "Connect the agent to Limeon's Google Workspace, email, and vendor portals — let it discover and validate evidence autonomously",
-                "Run the agent for 4 weeks — measure evidence coverage, gap detection accuracy, and time saved vs manual audit prep",
-                "Hand the audit-ready pack to Limeon's compliance lead and measure prep time vs historical baseline",
-                "Once proven, create vertical flavors: compliance-for-praxis.de, compliance-for-studio-legali.it, compliance-for-beratungsfirmen.at"
+                "Deploy MVP on expense.limeon.eu (EU-hosted)",
+                "Configure Limeon's actual expense policy: client meal vs team lunch, travel class limits, missing-field rules",
+                "Set up DE/IT/AT VAT completeness checks for the countries Limeon invoices in",
+                "Feed 50 real receipts from Limeon's last 3 months through the agent — measure pass/fail rate and false rejections",
+                "Hand the clean export to Limeon's bookkeeper and measure time-to-books vs manual process",
+                "Once proven, create vertical flavors: expense-for-handwerker.de, expense-for-partita-iva.it, expense-for-gemeinschaftsunternehmen.at"
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
@@ -439,19 +439,18 @@ export default function IdeaDetailPage() {
                   <TableHeader>
                     <TableRow>
                       <TableHead className="w-[35%]">Feature</TableHead>
-                      <TableHead className="w-[30%]">Vanta / Drata</TableHead>
+                      <TableHead className="w-[30%]">Dext / Expensify</TableHead>
                       <TableHead className="w-[35%]">This Idea</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
                     {[
-                      ["Target segment", "Mid-market / enterprise (50+ employees)", "Small regulated firms (5-30 employees)"],
-                      ["Continuous evidence collection", "✅ Automated connectors", "✅ Automated connectors (simpler, small-firm tools)"],
-                      ["Per-industry evidence taxonomy", "❌ Generic framework only", "✅ Pre-built for healthcare, legal, financial, energy"],
-                      ["Plain-language gap remediation", "❌ Technical compliance language", "✅ Plain language for non-compliance-staff"],
-                      ["Consultant-referred distribution", "❌ Direct enterprise sales", "✅ B2B2B via compliance consultants and trade associations"],
-                      ["EU data residency + GDPR DPA", "❌ US-first / enterprise add-on", "✅ FRA/MIL hosting, GDPR DPA auto-included"],
-                      ["Price point for small firms", "❌ $10K+/yr minimum", "✅ EUR49-149/mo ($600-1800/yr)"]
+                      ["EU VAT completeness (DE/IT/AT)", "❌ Partial / manual", "✅ Country-specific mandatory-field checks at intake"],
+                      ["Per-company policy engine", "❌ Generic categorization only", "✅ Custom rules: thresholds, required fields, approval chains"],
+                      ["Accountant-referred distribution", "❌ Direct-to-SME only", "✅ B2B2B via Steuerberater/commercialista"],
+                      ["Intake rejection with plain-language reason", "❌ Email-only nudges", "✅ Instant pass/fail in DE/IT/EN at intake time"],
+                      ["Accountant-ready batch export", "❌ CSV cleanup needed", "✅ Drop-in export matching bookkeeper workflow"],
+                      ["EU data residency", "❌ US-only / US-first", "✅ FRA/MIL hosting, GDPR DPA auto-included"]
                     ].map(([feature, current, us]) => (
                       <TableRow key={feature}>
                         <TableCell className="font-medium">{feature}</TableCell>
@@ -472,20 +471,20 @@ export default function IdeaDetailPage() {
             <CardContent className="space-y-3">
               {[
                 {
-                  risk: "Connector coverage is limited for small-firm tools",
-                  mitigation: "Start with the most common small-firm toolset (Google Workspace, Microsoft 365, common cloud storage, email) and add connectors per vertical based on pre-seller demand. The MVP covers the 80% case — niche tools are phase 2"
+                  risk: "OCR accuracy on crumpled/non-standard receipts",
+                  mitigation: "Start with clear/PDF receipts (highest volume, easiest), add phone-camera OCR as phase 2. Fall back to manual review queue for low-confidence extractions — agent flags for human, doesn't block"
                 },
                 {
-                  risk: "Compliance consultants are slow to recommend new tools",
-                  mitigation: "Sell to the firm's compliance lead directly first (self-serve, EUR49/mo), then let the consultant discover the clean audit packs. Consultant buy-in comes after the firm is already using it and the consultant sees the value in front of them"
+                  risk: "Per-country VAT rules change",
+                  mitigation: "Start with the 3 biggest markets (DE/IT/AT). Rules change infrequently (annual budgets). Config-driven rule engine means updates don't require code deploys — accountants can adjust field requirements"
                 },
                 {
-                  risk: "Vanta/Drata add a small-business tier",
-                  mitigation: "They're enterprise-first, 100+ person teams, roadmap driven by mid-market/enterprise deals. A self-serve, plain-language, EU-hosted tool for regulated small firms with per-industry taxonomy and consultant distribution is a different product, not a price tier they'll add fast"
+                  risk: "Accountants are slow adopters",
+                  mitigation: "Sell to the SME owner directly first (self-serve, EUR29/mo), then let the accountant discover the clean exports. Accountant buy-in comes after the SME client is already using it — the accountant sees the value, not the other way around"
                 },
                 {
-                  risk: "Evidence collection touches sensitive data",
-                  mitigation: "Start with read-only connectors and explicit per-firm opt-in for each data source. EU hosting + GDPR DPA from day one. The agent never modifies data — only reads and organizes. Clear security positioning is a feature, not a bug, for compliance buyers"
+                  risk: "Dext/Expensify add EU policy features",
+                  mitigation: "They're US-first, 100+ person teams, roadmap driven by US enterprise. EU per-country VAT + per-company policy engine + accountant-referred distribution is a different product, not a feature gap they'll close fast"
                 }
               ].map((item) => (
                 <div key={item.risk} className="flex gap-3">
@@ -500,15 +499,6 @@ export default function IdeaDetailPage() {
               ))}
             </CardContent>
           </Card>
-        </div>
-
-        {/* Footer */}
-        <Separator className="my-8" />
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <p>Built with Next.js, shadcn/ui, and deployed on Vercel</p>
-          <Link href="https://github.com/chrpan/daily-saas-ideas" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
-            View on GitHub
-          </Link>
         </div>
       </main>
     </div>
