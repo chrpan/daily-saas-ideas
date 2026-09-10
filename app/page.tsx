@@ -208,10 +208,24 @@ const sampleIdeas: Idea[] = [
     pricing: "EUR29-79/mo + EUR5/employee",
     targetMarket: "EU small/mid teams, accountants",
     category: "AI / Finance Ops"
+  },
+  {
+    id: "14",
+    title: "EU AI Act Compliance Dossier for Skilled Trades (Handwerk)",
+    description: "An autonomous agent that produces a plain-language EU AI Act compliance dossier and operational AI-tool safety checklist tailored to a craft business's real tool stack and workflows (customer communication, quoting, scheduling, documentation) — distributed through HWK/IHK/FO chamber networks that already run AI training for member businesses. The paid differentiator vs. a free one-shot prompt is the vertical-specific document prep, recurring review as the tool stack changes, and chamber-backed trust distribution.",
+    date: "2026-09-10",
+    tags: ["EU AI Act", "Compliance", "Handwerk", "DE/AT/IT", "SMB", "Self-Serve"],
+    detailUrl: "/ideas/14",
+    featured: false,
+    estimatedMRR: "EUR3-8K",
+    buildTime: "4-6 weeks",
+    pricing: "EUR29-99/mo",
+    targetMarket: "EU skilled trades (Handwerk), craft chambers",
+    category: "AI / Compliance"
   }
 ];
 
-const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit", "AI / Finance Ops", "Compliance / Audit"];
+const categories = ["All", "Social Proof / Conversion", "AI / Career Tools", "Team Collaboration", "FinTech / Crypto", "AI / Data Ingestion", "AI / Revenue Ops", "IT Compliance / DNS", "IT Support / Helpdesk", "AI / SaaS Audit", "AI / Finance Ops", "Compliance / Audit", "AI / Compliance"];
 const sortOptions = [
   { value: "featured", label: "Featured First" },
   { value: "mrr-desc", label: "Est. MRR (High → Low)" },
